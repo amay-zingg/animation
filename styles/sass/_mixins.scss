@@ -1,14 +1,21 @@
 @mixin fontSize($chosenSize) {
-	font-size: $chosenSize;
-	font-weight: 400;
-	line-height: $chosenSize * 1.5;
+  font-size: $chosenSize;
+  font-weight: 400;
+  line-height: $chosenSize * 1.5;
 }
+
+// This is how you use it
+// @include fontSize(4.5rem);
 
 /**
 * FLEXBOX
 * A mixin to rule complex flexbox layout
 * @author nicolacastellanidev@gmail.com
 */
+
+// This is how you use it
+// @include flexbox($placeItems: center, $placeContent: center, $direction: column, $wrap: wrap);
+
 @mixin flexbox(
   $display: flex,
   $direction: row,
@@ -20,33 +27,34 @@
   $alignContent: null,
   $justifyContent: null,
   $alignItems: null,
-  $justifyItems: null) {
-	display: $display;
-	flex-direction: $direction;
+  $justifyItems: null
+) {
+  display: $display;
+  flex-direction: $direction;
 
-	@if $placeContent == null {
-		@if $alignContent {
-			align-content: $alignContent;
-		}
-		@if $justifyContent {
-			justify-content: $justifyContent;
-		}
-	} @else {
-		place-content: $placeContent;
-	}
+  @if $placeContent == null {
+    @if $alignContent {
+      align-content: $alignContent;
+    }
+    @if $justifyContent {
+      justify-content: $justifyContent;
+    }
+  } @else {
+    place-content: $placeContent;
+  }
 
-	@if $placeItems == null {
-		@if $alignItems {
-			align-items: $alignItems;
-		}
-		@if $justifyItems {
-			justify-items: $justifyItems;
-		}
-	} @else {
-		place-items: $placeItems;
-	}
+  @if $placeItems == null {
+    @if $alignItems {
+      align-items: $alignItems;
+    }
+    @if $justifyItems {
+      justify-items: $justifyItems;
+    }
+  } @else {
+    place-items: $placeItems;
+  }
 
-	flex-wrap: $wrap;
-	flex-shrink: $shrink;
-	flex-grow: $grow;
+  flex-wrap: $wrap;
+  flex-shrink: $shrink;
+  flex-grow: $grow;
 }
