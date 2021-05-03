@@ -8,6 +8,7 @@ section h1 span {
 }
 
 .section-content {
+  width: 100%;
   @include flexbox(
     $placeItems: center,
     $placeContent: space-around,
