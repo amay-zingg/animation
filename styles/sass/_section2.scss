@@ -1,6 +1,4 @@
 .aquarium {
-  //   top: 130px;
-  //   left: 250px;
   width: 400px;
   height: 400px;
   transform-style: preserve-3d;
@@ -12,6 +10,7 @@
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
+
 @keyframes aquaCube3dRotation {
   from {
     transform: rotate3d(1, 1, 1, 0);
@@ -20,43 +19,51 @@
     transform: rotate3d(1, 1, 1, 720deg);
   }
 }
+
 div:hover {
   animation-play-state: paused;
 }
+
 .aquarium div {
   position: absolute;
   height: 400px;
   width: 400px;
   opacity: 0.8;
 }
+
 .face1 {
   top: 0;
   left: 0;
   transform: translate3d(0, 0, 200px);
 }
+
 .face2 {
   top: 0;
   left: 0;
   transform: translate3d(0, 0, -200px);
 }
+
 .face3 {
   top: 0;
   left: 100%;
   transform-origin: 0 0;
   transform: translate3d(0, 0, 200px) rotate3d(0, 1, 0, 90deg);
 }
+
 .face4 {
   top: 100%;
   left: 0;
   transform-origin: 0 0;
   transform: translate3d(0, 0, 200px) rotate3d(1, 0, 0, -90deg);
 }
+
 .face5 {
   top: 0;
   right: 100%;
   transform-origin: 100% 0;
   transform: translate3d(0, 0, 200px) rotate3d(0, 1, 0, -90deg);
 }
+
 .face6 {
   bottom: 100%;
   left: 0;
