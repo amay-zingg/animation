@@ -1,72 +1,30 @@
-.aquarium {
-  width: 400px;
-  height: 400px;
-  transform-style: preserve-3d;
-  position: relative;
-  animation-name: aquaCube3dRotation;
-  animation-duration: 20s;
-  animation-delay: 1s;
-  animation-direction: reverse;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease;
+#section3 .section-content .left {
+  @include flexbox(
+    $placeItems: center,
+    $placeContent: center,
+    $direction: column,
+    $wrap: wrap
+  );
+  width: 450px;
+  height: 450px;
+  background: white;
+
+  //   transition-property: background;
+  //   transition-duration: 2s;
+  //   transition-delay: 1s;
+  //   transition-timing-function: ease-in;
+
+  //   SHORTHAND
+  filter: blur(1px);
+  transition: background 2s ease-in 1s, filter 2s ease-out 1s;
 }
 
-@keyframes aquaCube3dRotation {
-  from {
-    transform: rotate3d(1, 1, 1, 0);
-  }
-  to {
-    transform: rotate3d(1, 1, 1, 720deg);
-  }
+.transition-image {
+  width: 100%;
+  height: 100%;
 }
 
-div:hover {
-  animation-play-state: paused;
-}
-
-.aquarium div {
-  position: absolute;
-  height: 400px;
-  width: 400px;
-  opacity: 0.8;
-}
-
-.face1 {
-  top: 0;
-  left: 0;
-  transform: translate3d(0, 0, 200px);
-}
-
-.face2 {
-  top: 0;
-  left: 0;
-  transform: translate3d(0, 0, -200px);
-}
-
-.face3 {
-  top: 0;
-  left: 100%;
-  transform-origin: 0 0;
-  transform: translate3d(0, 0, 200px) rotate3d(0, 1, 0, 90deg);
-}
-
-.face4 {
-  top: 100%;
-  left: 0;
-  transform-origin: 0 0;
-  transform: translate3d(0, 0, 200px) rotate3d(1, 0, 0, -90deg);
-}
-
-.face5 {
-  top: 0;
-  right: 100%;
-  transform-origin: 100% 0;
-  transform: translate3d(0, 0, 200px) rotate3d(0, 1, 0, -90deg);
-}
-
-.face6 {
-  bottom: 100%;
-  left: 0;
-  transform-origin: 0 100%;
-  transform: translate3d(0, 0, 200px) rotate3d(1, 0, 0, 90deg);
+#section3 .left:hover {
+  background: black;
+  filter: blur(0px);
 }

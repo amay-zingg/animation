@@ -20,7 +20,6 @@
 
     <div class="wrapper">
         <main>
-            
             <!-- <section id="sectionNUMBER">
                 <h1>Title</h1>
             
@@ -30,6 +29,112 @@
                 </div>
             
             </section> -->
+
+            <section id="section4">
+                <h1>SVG Animation</h1>
+            
+                <div class="section-content">
+                    <div class="left">
+                        <svg width="400" height="200">
+                            <rect id="rectangle" x="200" y="100" width="100" height="100" fill="rgb(0,102,118)">
+                        
+                                <animate attributeName="x" begin="0s" dur="3s" from="400" to="0" />
+                        
+                                <animate attributeName="y" begin="0s" dur="3s" from="200" to="0" />
+                        
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <h2>'animate' example: rect [x, y]</h2>
+                        <p>This one is just moving across the screen</p>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="left">
+                        <svg width="800" height="600">
+                            <rect id="rectangle" x="400" y="200" width="100" height="100" fill="rgb(0,102,118)">
+                        
+                                <animateMotion path="M 0 0 L -400 -200" begin="0s" dur="3s" fill="freeze" />
+                        
+                                <animateMotion path="M-400 -200 A400 200 0 0 1 0 0" begin="3s" dur="6s" fill="freeze" />
+                        
+                            </rect>
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <h2>'animateMotion' example: [path]</h2>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="left">
+                        <svg width="800" height="600">
+                            <image id="tsImg" href="assets/testImage.jpg" x="0" y="0" width="650" height="374">
+                        
+                                <animateTransform attributeName="transform" type="scale" begin="2" dur="3" values="1; 0.4; 1.2; 1" />
+                        
+                                <animateTransform attributeName="transform" type="skewY" begin="6" dur="3" values="0; 20; 0" />
+                        
+                                <animateTransform attributeName="transform" type="rotate" begin="10" dur="3" values="0 325 187; 180 325 187"
+                                    fill="freeze" />
+                            </image>
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <h2>'animateTransform' example: [image]</h2>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="left">
+                        <svg width="800" height="600">
+                            <circle id="circle1" cx="400" cy="300" r="200" fill="none" stroke="blue" stroke-width="100"
+                                stroke-dasharray="15 15">
+                                <animateTransform attributeName="transform" type="rotate" begin="1s" dur="10s" from="0 400 300"
+                                    to="360 400 300" />
+                            </circle>
+                        
+                            <circle id="circle2" cx="400" cy="300" r="100" fill="none" stroke="green" stroke-width="70"
+                                stroke-dasharray="15 15">
+                                <animateTransform attributeName="transform" type="rotate" begin="1s" dur="10s" from="0 400 300"
+                                    to="-720 400 300" />
+                                <set attributeName="stroke" to="red" begin="5s" dur="3s" />
+                            </circle>
+                        
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <h2>'set' example: [circle2]</h2>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="left">
+                        <svg width="800" height="600">
+                            <circle id="circle1" cx="400" cy="300" r="200" fill="none" stroke="blue" stroke-width="100"
+                                stroke-dasharray="15 15">
+                                <animateTransform attributeName="transform" type="rotate" begin="1s" dur="10s" from="0 400 300"
+                                    to="360 400 300" />
+                            </circle>
+                        
+                            <circle id="circle2" cx="400" cy="300" r="100" fill="none" stroke="green" stroke-width="70"
+                                stroke-dasharray="15 15">
+                                <animateTransform attributeName="transform" type="rotate" begin="1s" dur="10s" from="0 400 300"
+                                    to="-720 400 300" />
+                                <!-- "discard" browser support was discontinued in 2020 -->
+                                <discard begin="2s" href="circle2" />
+                            </circle>
+                        
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <h2>'discard' example: [circle2]</h2>
+                    </div>
+                </div>
+            
+            </section>
 
             <section id="section3">
                 <h1>CSS Transitions</h1>
@@ -59,8 +164,23 @@
             
             </section>
 
-            <section id="section2">
-                <h1>CSS Animations</h1>
+            <section id="section1">
+                <h1>CSS Animation Properties <span>& @keyframes Rules</span></h1>
+
+                <div class="section-content">
+                    <div class="left">
+                        <svg height="300px" width="300px">
+                            <image id="testImg" href="assets/CssAnimationTestImage.jpg" alt="weird cartoon" x="0" y="0" height="100"
+                                class="LearnCssAnimation">
+                            </image>
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <div class="image-container">
+                            <img src="assets/Keyframes.png" alt="snippet of Keyframes note">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="section-content">
                     <div class="left">
@@ -86,29 +206,10 @@
                         </div>
                     </div>
                     <div class="right">
+                        <h2>CSS Animations</h2>
                         <div class="image-container">
                             <img src="assets/keyframesFaces.png" alt="Keyframe faces">
                             <img src="assets/CSSAnimationProperties.png" alt="Animation Properties">
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-            <section id="section1">
-                <h1>CSS Animation Properties <span>& @keyframes Rules</span></h1>
-
-                <div class="section-content">
-                    <div class="left">
-                        <svg height="300px" width="300px">
-                            <image id="testImg" href="assets/CssAnimationTestImage.jpg" alt="weird cartoon" x="0" y="0" height="100"
-                                class="LearnCssAnimation">
-                            </image>
-                        </svg>
-                    </div>
-                    <div class="right">
-                        <div class="image-container">
-                            <img src="assets/Keyframes.png" alt="snippet of Keyframes note">
                         </div>
                     </div>
                 </div>
