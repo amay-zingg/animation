@@ -97,7 +97,7 @@ section h1 span {
 }
 
 /* * * * * * * * * * * * * * MEDIA QUERIES * * * * * * * * * * * * * * */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .section-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -115,6 +115,10 @@ section h1 span {
     -webkit-box-flex: 0;
         -ms-flex-positive: 0;
             flex-grow: 0;
+  }
+  .left,
+  .right {
+    width: 100%;
   }
 }
 
@@ -219,6 +223,45 @@ div:hover {
           transform-origin: 0 100%;
   -webkit-transform: translate3d(0, 0, 200px) rotate3d(1, 0, 0, 90deg);
           transform: translate3d(0, 0, 200px) rotate3d(1, 0, 0, 90deg);
+}
+
+#section3 .section-content .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-content: center;
+  place-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  width: 450px;
+  height: 450px;
+  background: white;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  -webkit-transition: background 2s ease-in 1s, -webkit-filter 2s ease-out 1s;
+  transition: background 2s ease-in 1s, -webkit-filter 2s ease-out 1s;
+  transition: background 2s ease-in 1s, filter 2s ease-out 1s;
+  transition: background 2s ease-in 1s, filter 2s ease-out 1s, -webkit-filter 2s ease-out 1s;
+}
+
+.transition-image {
+  width: 100%;
+  height: 100%;
+}
+
+#section3 .left:hover {
+  background: black;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
 }
 
 html {

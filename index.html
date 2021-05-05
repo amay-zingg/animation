@@ -31,12 +31,30 @@
             
             </section> -->
 
-            <section id="sectionNUMBER">
-                <h1>SVG Animations</h1>
+            <section id="section3">
+                <h1>CSS Transitions</h1>
             
                 <div class="section-content">
-                    <div class="left"></div>
-                    <div class="right"></div>
+                    <div class="left">
+                        <svg width="450px" height="450px">
+                            <radialGradient id="softEdge" r="44%">
+                                <stop stop-color="white" offset="60%" />
+                                <stop stop-color="black" offset="85%" />
+                            </radialGradient>
+                    
+                            <defs>
+                                <mask id="softEdgeMask">
+                                    <circle cx="50%" cy="50%" r="50%" fill="url(#softEdge)" />
+                                </mask>
+                            </defs>
+                    
+                            <image href="assets/CSSTransitionsTestImage.jpg" mask="url(#softEdgeMask)" class="transition-image"/>
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <h2>Summary</h2>
+                        <p>CSS animations are great for simple animations, but anything complicated should be made in JS. There are plenty of disadvantages like not being able to to nested animations or discarding a target. Cannot animate along a curve, or animate attributes.</p>
+                    </div>
                 </div>
             
             </section>
@@ -70,8 +88,8 @@
                     <div class="right">
                         <div class="image-container">
                             <img src="assets/keyframesFaces.png" alt="Keyframe faces">
+                            <img src="assets/CSSAnimationProperties.png" alt="Animation Properties">
                         </div>
-                        <p>Okay so I'm trying to understand how this even works. </p>
                     </div>
                 </div>
 
@@ -105,7 +123,7 @@
     
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="scripts/jquery-ui.js"></script>
+    <!-- <script src="scripts/jquery-ui.js"></script> -->
     
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>

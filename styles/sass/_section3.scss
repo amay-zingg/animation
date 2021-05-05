@@ -1,0 +1,30 @@
+#section3 .section-content .left {
+  @include flexbox(
+    $placeItems: center,
+    $placeContent: center,
+    $direction: column,
+    $wrap: wrap
+  );
+  width: 450px;
+  height: 450px;
+  background: white;
+
+  //   transition-property: background;
+  //   transition-duration: 2s;
+  //   transition-delay: 1s;
+  //   transition-timing-function: ease-in;
+
+  //   SHORTHAND
+  filter: blur(1px);
+  transition: background 2s ease-in 1s, filter 2s ease-out 1s;
+}
+
+.transition-image {
+  width: 100%;
+  height: 100%;
+}
+
+#section3 .left:hover {
+  background: black;
+  filter: blur(0px);
+}
