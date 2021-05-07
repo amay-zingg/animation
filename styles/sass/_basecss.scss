@@ -301,7 +301,6 @@ main {
 section {
   width: 100%;
   margin: 1em 0;
-  text-align: center;
   padding: 0.5em;
   @include flexbox(
     $placeItems: center,
@@ -318,6 +317,47 @@ h2 {
   margin: 0;
   padding: 20px 0;
   text-shadow: 1px 1px 1px $secondary;
+  text-align: center;
+}
+
+/* * * * * * * * * * * * * * PAGE SETUP * * * * * * * * * * * * * * */
+section {
+  border: 2px solid $secondary;
+}
+
+section h1,
+section h1 span {
+  display: block;
+}
+
+.section-content {
+  width: 100%;
+  @include flexbox(
+    $placeItems: center,
+    $placeContent: space-around,
+    $direction: row,
+    $wrap: wrap
+  );
+}
+
+.left,
+.right {
+  width: 50%;
+  text-align: left;
+}
+
+.image-container {
+  padding: 0.5em;
+  @include flexbox(
+    $placeItems: center,
+    $placeContent: center,
+    $direction: column,
+    $wrap: wrap
+  );
+}
+
+.image-container img {
+  width: 90%;
 }
 
 /* * * * * * * * * * * * * * MEDIA QUERIES * * * * * * * * * * * * * * */
@@ -325,5 +365,21 @@ h2 {
   .wrapper {
     max-width: 1024px;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .section-content {
+    @include flexbox(
+      $placeItems: center,
+      $placeContent: center,
+      $direction: column,
+      $wrap: wrap
+    );
+  }
+
+  .left,
+  .right {
+    width: 100%;
   }
 }

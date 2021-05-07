@@ -35,35 +35,52 @@
             
                 <div class="section-content">
                     <div class="left">
-                        <svg width="400" height="200">
+                        <svg width="400" height="400">
                             <rect 
                                 id="rectangle" 
-                                x="200" 
-                                y="100" 
-                                width="100" 
+                                x="10" 
+                                y="10" 
+                                width="150" 
                                 height="100" 
-                                fill="rgb(0,102,118)">
+                                fill="maroon"
+                                stroke="firebrick"
+                                stroke-width="5"
+                                rx="15">
                         
                                 <animate 
                                     attributeName="x" 
                                     begin="0s" 
                                     dur="3s" 
-                                    from="400" 
-                                    to="0" />
+                                    from="0" 
+                                    to="250" />
                         
                                 <animate 
                                     attributeName="y" 
                                     begin="0s" 
                                     dur="3s" 
-                                    from="200" 
-                                    to="0" />
+                                    from="0" 
+                                    to="300" />
+
+                                <animate attributeName="y" begin="3s" dur="3s" from="300" to="10" />
+
+                                <animate attributeName="x" begin="3s" dur="3s" from="250" to="10" />
                         
                             </rect>
                         </svg>
                     </div>
                     <div class="right">
                         <h2>'animate' example: rect [x, y]</h2>
-                        <p>This one is just moving across the screen</p>
+                        <ul>
+                            <li>✶ The SVG width and height are set up (400 by 400)</li>
+                            <li>✶ Y = ^v up down</li>
+                            <li>✶ X = <> left right</li>
+                            <li>✶ Using a <rect> fill in the attributes; identify the name (id), x, y, width and height of object, fill (colour
+                                inside), stroke (border), stroke-width (in px), and rx/ry (rounded corners in pixels - rx are horizontal corners
+                                and ry are vertical corners) (make an adjustment to the path of the animation when adding stroke to the outside
+                                of the object, the 0/0 are to the object and the stroke is added on the outside - meaning your design could get
+                                cut off)</li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect">This is the MDN for RECT</a></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -221,7 +238,7 @@
                                     dur="10s" 
                                     from="0 400 300"
                                     to="-720 400 300" />
-                                    
+
                                 <!-- "discard" browser support was discontinued in 2020 -->
                                 <discard begin="2s" href="circle2" />
                             </circle>

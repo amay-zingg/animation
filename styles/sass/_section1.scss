@@ -1,41 +1,3 @@
-section {
-  border: 2px solid $secondary;
-}
-
-section h1,
-section h1 span {
-  display: block;
-}
-
-.section-content {
-  width: 100%;
-  @include flexbox(
-    $placeItems: center,
-    $placeContent: space-around,
-    $direction: row,
-    $wrap: wrap
-  );
-}
-
-.left,
-.right {
-  width: 50%;
-}
-
-.image-container {
-  padding: 0.5em;
-  @include flexbox(
-    $placeItems: center,
-    $placeContent: center,
-    $direction: column,
-    $wrap: wrap
-  );
-}
-
-.image-container img {
-  width: 90%;
-}
-
 .LearnCssAnimation {
   transform-origin: 50% 50% 0px;
   animation-name: ImgRotate3dAnimation;
@@ -125,21 +87,4 @@ div:hover {
   left: 0;
   transform-origin: 0 100%;
   transform: translate3d(0, 0, 200px) rotate3d(1, 0, 0, 90deg);
-}
-
-/* * * * * * * * * * * * * * MEDIA QUERIES * * * * * * * * * * * * * * */
-@media only screen and (max-width: 800px) {
-  .section-content {
-    @include flexbox(
-      $placeItems: center,
-      $placeContent: center,
-      $direction: column,
-      $wrap: wrap
-    );
-  }
-
-  .left,
-  .right {
-    width: 100%;
-  }
 }
