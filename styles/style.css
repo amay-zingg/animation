@@ -184,6 +184,47 @@ div:hover {
   padding: 20px 0;
 }
 
+/* * * * BURGER * * * */
+.left {
+  position: relative;
+  height: 700px;
+}
+
+.hamburger,
+.word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.word {
+  height: 300px;
+  top: 460px;
+  left: 100px;
+}
+
+.removed {
+  display: none;
+}
+
+.toppings {
+  text-align: center;
+}
+
+.toppings p {
+  padding: 15px;
+}
+
+.toppings button {
+  padding: 15px;
+  border: firebrick 1px solid;
+  color: white;
+  background: maroon;
+  border-radius: 5px;
+}
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;

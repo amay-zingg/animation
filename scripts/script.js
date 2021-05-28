@@ -1,83 +1,56 @@
-// * * * * SMOOTH SCROLLING ON SAME PAGE LINKS
-const scroll = function () {
-    $("a[href^=\\#]").click(function(e) {   
-    e.preventDefault();   
-    var dest = $(this).attr('href');   
-    console.log(dest);   
-    $('html,body').animate(
-        { scrollTop: $(dest).offset().top }
-        , 'slow'
-    ); 
+// * * * * SVG BURGER
+const toppingButtons = document.querySelector(".toppings");
+const seedButton = document.querySelector("#seeds");
+const lettuceButton = document.querySelector("#lettuce");
+const ketchupButton = document.querySelector("#ketchup");
+const cheeseButton = document.querySelector("#cheese");
+
+const seeds = document.querySelector(".seeds");
+const lettuce = document.querySelector(".lettuce");
+const ketchup = document.querySelector(".ketchup");
+const cheese = document.querySelector(".cheese");
+
+seedButton.addEventListener("click", (e) => {
+  seeds.classList.toggle("removed");
 });
-};
 
-// * * * * works with id="smooth"
+lettuceButton.addEventListener("click", (e) => {
+  lettuce.classList.toggle("removed");
+});
 
-// * * * * RESPONSIVE MENU
-// const navMenu = function () {
-//     // * * * * MENU CLICK OUTSIDE
-//     $(document).on("click", function(event){
-//     if(!$(event.target).closest(".responsive-nav-button").length){
-//         $(".responsive-nav").slideUp("fast");
-//         }
-//     });
+cheeseButton.addEventListener("click", (e) => {
+  cheese.classList.toggle("removed");
+});
 
-//     $( ".responsive-nav-button" ).click(function() {
-//         $( ".responsive-nav" ).toggle("slow");
-//     });
-// };
+ketchupButton.addEventListener("click", (e) => {
+  ketchup.classList.toggle("removed");
+});
 
-// * * * * LANDING PAGE BLOG POSTS
-// const blogPostArray = [
-//     {
-//         title: "I'm title 1",
-//         image: "./assets/pattern/PatternBone-Full.jpg",
-//         imageAlt: "Pattern Print Blue Bones | Frizz Kid Art",
-//         postContent: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis accusantium necessitatibus sed deleniti tempore accusamus saepe laboriosam dolorem, cum veritatis odio quae aperiam voluptatibus dicta eius? Cupiditate praesentium ab in.",
-//         link: "blog-article.html"
-//     },
-//      {
-//         title: "I'm title 2",
-//         image: "./assets/pattern/PatternBone-Full.jpg",
-//         imageAlt: "Pattern Print Blue Bones | Frizz Kid Art",
-//         postContent: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis accusantium necessitatibus sed deleniti tempore accusamus saepe laboriosam dolorem, cum veritatis odio quae aperiam voluptatibus dicta eius? Cupiditate praesentium ab in.",
-//         link: "blog-article.html"
-//     }
+// * * * * CLIP PATH WRITING
 
-// ]
+function frameOne() {
+  gsap.set([".word"], { autoAlpha: 1 });
 
-// * * * * TRUNCATE
-// const truncate = function(text,limit, after) {
-//     let content = text.split(" ").slice(0, limit);
-//     content = content.join(" ") + (after ? after : "");
-//     return content;
-// }
+  var tl = gsap.timeline({ delay: 0.2 });
 
-// * * * * PUT POSTS ON PAGE
-// const displayBlogPost = () => {
+  tl.from(
+    [".word"],
+    { duration: 0.75, xPercent: -100, ease: "sine.out" },
+    "sync-=0.3"
+  );
+  tl.from(
+    [".word"],
+    { duration: 0.75, xPercent: 100, ease: "sine.out" },
+    "sync-=0.3"
+  );
 
-//     const blogPost = blogPostArray.map((post) => {
-//         const content = truncate(post.postContent, 20, "...")
-//         return `<div class="blog-post-single">
-//                 <img src="${post.image}" alt="${post.imageAlt}">
-//                 <h3>${post.title}</h3>
-//                 <p>${content}</p>
-//                 <div class="button-box">
-//                     <a href="${post.link}" class="frizz-button">Read More</a>
-//                 </div>
-//                 </div>
-//         `
-//     })
-//     $(".blog-post-container").append(blogPost)
-// }
+  var frameDelay = 2;
+  gsap.to([".word"], {
+    duration: 0.25,
+    opacity: 0,
+    ease: "sine.out",
+    delay: frameDelay,
+  });
+}
 
-// * * * * INIT PIECES
-init = function () {
-    // scroll();
-    // navMenu();
-};
-
-// * * * * DOCUMENT READY
-$(() => {
-    init();
-}); // * * * * END OF DOCUMENT READY
+frameOne();
