@@ -333,7 +333,7 @@ section h1 span {
 .section-content {
   width: 100%;
   @include flexbox(
-    $placeItems: center,
+    $placeItems: flex-start,
     $placeContent: space-around,
     $direction: row,
     $wrap: wrap
@@ -371,7 +371,7 @@ section h1 span {
 @media only screen and (max-width: 800px) {
   .section-content {
     @include flexbox(
-      $placeItems: center,
+      $placeItems: flex-start,
       $placeContent: center,
       $direction: column,
       $wrap: wrap
