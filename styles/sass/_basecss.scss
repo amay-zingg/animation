@@ -372,7 +372,7 @@ section h1 span {
   .section-content {
     @include flexbox(
       $placeItems: flex-start,
-      $placeContent: center,
+      $placeContent: flex-start,
       $direction: column,
       $wrap: wrap
     );

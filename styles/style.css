@@ -687,7 +687,7 @@ section h1 span {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    place-content: center;
+    place-content: flex-start;
     place-items: flex-start;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
